@@ -1,4 +1,3 @@
-import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
@@ -47,6 +46,5 @@ def test_select_one(driver):
     driver.get("https://demoqa.com/select-menu")
     driver.find_element(By.XPATH,"//div[@id='selectOne']").click()
     driver.find_element(By.XPATH,"//div[contains(text(),'Mr.')]").click()
-    time.sleep(2)
     selected_text = driver.find_element(By.CSS_SELECTOR,"div[id='selectOne'] div[class='css-1dimb5e-singleValue']").text
     assert selected_text == "Mr."
